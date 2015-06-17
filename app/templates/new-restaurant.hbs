@@ -1,0 +1,16 @@
+<h1>New Restaurant</h1>
+
+<form>
+  <div class="form-group">
+    <label for="name">Name</label>
+    {{input id="name" class="form-control" value=name}}
+
+    <label for="address">Address</label>
+    {{input id="address" class="form-control" value=address}}
+
+    <label for="phone">Phone</label>
+    {{input id="phone" class="form-control" value=phone}}
+  </div>
+
+  <button class="btn btn-primary" {{action 'save'}}>Save</button>
+</form>

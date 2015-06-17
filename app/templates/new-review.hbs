@@ -1,0 +1,18 @@
+<h1>New Restaurant</h1>
+
+<form>
+  <div class="form-group">
+    <label for="author">author</label>
+    {{input id="author" class="form-control" value=author}}
+    <br>
+    <label for="rating">Rating</label>
+    {{view "select" content=stars value=rating}}
+    <br><br>
+
+    <label for="review">Review</label>
+    {{textarea id="review" class="form-control" value=review}}
+  </div>
+
+  <button class="btn btn-default" {{action 'submit'}}>Submit</button>
+</form>
+{{outlet}}

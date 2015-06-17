@@ -1,0 +1,36 @@
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-image: url("images/food.jpg");
+}
+
+input[type="text"] {
+  background-color: rgba(50, 50, 0, .15);
+  color: white;
+}
+
+.review {
+  background-color: rgba(9000, 9000, 90000, .2);
+  margin: 5px;
+  border-radius: 15px;
+  width: 400px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+h5 {
+  text-align:center;
+}
+
+select [type="text"] {
+  background-color: rgba(50, 50, 0, .15);
+}

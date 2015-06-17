@@ -1,0 +1,41 @@
+  <h1>{{model.name}}</h1>
+  <ul>
+    <h4><li>{{model.address}}</li></h4>
+    <h5><li>{{model.phone}}</li></h5>
+  </ul>
+
+  {{#if isReviewing}}
+  <form>
+    <div class="form-group">
+          <label for="author">Author</label>
+          {{input id="author" class="form-control" value=author}}
+          <br>
+
+          <label for="rating">Rating</label>
+          {{view "select" content=stars value=rating}}
+          <br><br>
+
+          <label for="review">Review</label>
+          {{textarea id="review" class="form-control" value=review}}
+        </div>
+        <button class="btn btn-default" {{action 'submit'}}>Add</button>
+
+    </form>
+    {{else}}
+    <!-- <button class="glyphicon glyphicon-pencil" red {{action 'Add'}}>Add</button> -->
+  <!-- {{#link-to 'newReview' classNames="btn btn-primary"}}Add a Review{{/link-to}} -->
+{{/if}}
+
+<br>
+<div class="review container">
+  <h3>Reviews for {{model.name}}</h3>
+  <ul>
+    {{#each review in model.reviews}}
+      <li><b>Author:</b> {{review.author}}</li>
+      <li><b>Rating:</b> {{review.rating}}</li>
+      <li><b>Review:</b> {{review.review}}</li>
+      <li><span class="glyphicon glyphicon-trash red" {{action "deleteReview" answer}}></span></li><hr>
+    {{/each}}
+  </ul>
+</div>
+<button class="glyphicon glyphicon-pencil" red {{action 'Add'}}>Add Review</button>

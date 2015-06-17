@@ -1,0 +1,6 @@
+<h1>Restaurants</h1>
+<ul>
+  {{#each restaurant in model}}
+    <li>{{#link-to 'restaurant' restaurant.id}}{{restaurant.name}}{{/link-to}}</li>
+  {{/each}}
+</ul>
