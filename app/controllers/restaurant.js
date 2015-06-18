@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   needs: ['restaurant'],
+  needs: ['review'],
   stars: [1, 2, 3, 4, 5],
   isReviewing: false,
 
@@ -26,10 +27,10 @@ export default Ember.Controller.extend({
       this.set('rating', "");
       this.set('review', "");
     },
-    deleteReview: function() {
+    deleteReview: function(review) {
       if (confirm('Are you sure?')){
-       var restaurant = this.get('controllers.restaurant.model');
-       restaurant.get('model').destroyRecord();
+       var restaurant = this.get('model');
+       review.destroyRecord();
        restaurant.save();
        this.transitionToRoute('restaurant', this.get('id'));
      }
