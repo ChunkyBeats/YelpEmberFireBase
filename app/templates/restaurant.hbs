@@ -7,6 +7,7 @@
   {{#if isReviewing}}
   <form>
     <div class="form-group">
+      <div class="review">
           <label for="author">Author</label>
           {{input id="author" class="form-control" value=author}}
           <br>
@@ -18,6 +19,7 @@
           <label for="review">Review</label>
           {{textarea id="review" class="form-control" value=review}}
         </div>
+      </div>
         <button class="btn btn-default" {{action 'submit'}}>Add</button>
 
     </form>
@@ -27,7 +29,7 @@
 {{/if}}
 
 <br>
-<div class="review container">
+<div class="review">
   <h3>Reviews for {{model.name}}</h3>
   <ul>
     {{#each review in model.reviews}}
